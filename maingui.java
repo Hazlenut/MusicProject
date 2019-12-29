@@ -62,9 +62,11 @@ public class maingui {
 		numblabel.setSize(200,40);
 		numblabel.setLocation(350,200);
 		
+		mainscreen.add(name1);
 		name1.setSize(100,20);
 		name1.setLocation(100,230);
 		
+		mainscreen.add(name2);
 		name2.setSize(100,20);
 		name2.setLocation(500,230);
 		
@@ -146,6 +148,8 @@ public class maingui {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				frame.dispose();
+				gamegui.startGame();
 			}
 
 		});
