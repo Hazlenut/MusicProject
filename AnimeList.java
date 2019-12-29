@@ -9,6 +9,7 @@ import java.util.ArrayList;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
@@ -18,17 +19,17 @@ public class AnimeList {
 		ArrayList<Anime> res = new ArrayList<Anime>();
 		FileInputStream input = new FileInputStream(new File("src/music/AnimeList.xlsx"));
 		XSSFWorkbook wb = new XSSFWorkbook(input);
-		
+		DataFormatter data = new DataFormatter();
 		
 		XSSFSheet sheet = wb.getSheetAt(wb.getSheetIndex("Sheet1"));
 		for(Row c: sheet) {
 			Anime a = new Anime();
 			a.setTitle(c.getCell(0).getStringCellValue());
-			a.setUrl(c.getCell(1).getStringCellValue());
-			if(c.getCell(2).getStringCellValue().equals("0")) {
-				a.setDifficult(false);
-			}else{
+			a.setUrl(data.formatCellValue(c.getCell(1)));
+			if(data.formatCellValue(c.getCell(2)).equals("0")) {
 				a.setDifficult(true);
+			}else{
+				a.setDifficult(false);
 			}
 			res.add(a);
 			
@@ -110,7 +111,13 @@ public class AnimeList {
 	public static void main(String[] args) throws IOException {
 		ArrayList<Anime> res = getAnimeList();
 		for(Anime a: res) {
-			System.out.println("Title: " + a.getTitle() + "\n" + "URL: " + a.getUrl() + "\n" + "Diff: ");
+			System.out.print("Title: " + a.getTitle() + "\n" + "URL: " + a.getUrl() + "\n" + "Diff: ");
+			if(a.isDifficult()) {
+				System.out.print("Hard");
+			}else {
+				System.out.print("Easy");
+			}
+			System.out.println();
 		}
 	}
 }
