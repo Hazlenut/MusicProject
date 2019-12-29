@@ -34,9 +34,6 @@ public class AnimeList {
 			
 		}
 		
-		
-		
-		
 		return res;
 	}
 	public static ArrayList<Anime> getEasy(int n) throws IOException {
@@ -68,6 +65,44 @@ public class AnimeList {
 			}
 			used.add(rand);
 			res.add(all.get(rand));
+			
+		}
+		return res;
+	}
+	public static ArrayList<Anime> getHard(int n) throws IOException {
+		ArrayList<Anime> all = getAnimeList();
+		ArrayList<Anime> res = new ArrayList<Anime>();
+		ArrayList<Integer> used = new ArrayList<Integer>();
+		while(res.size() != n) {
+			int rand = (int) (Math.random() * all.size());
+			if(used.contains(rand)) {
+				continue;
+			}
+			if(!all.get(rand).isDifficult()) {
+				continue;
+			}
+			used.add(rand);
+			res.add(all.get(rand));
+			
+		}
+		return res;
+	}
+	public static ArrayList<Anime> getExtreme(int n) throws IOException {
+		ArrayList<Anime> all = getAnimeList();
+		ArrayList<Anime> res = new ArrayList<Anime>();
+		ArrayList<Integer> used = new ArrayList<Integer>();
+		while(res.size() != n) {
+			int rand = (int) (Math.random() * all.size());
+			if(used.contains(rand)) {
+				continue;
+			}
+			if(!all.get(rand).isDifficult()) {
+				continue;
+			}
+			used.add(rand);
+			all.get(rand).setUrl(all.get(rand).getUrl() + "?t=" + ((int)(Math.random() * 60)));
+			res.add(all.get(rand));
+			
 			
 		}
 		return res;
