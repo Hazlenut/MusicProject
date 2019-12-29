@@ -84,8 +84,7 @@ public class maingui{
 							}
 							
 						});
-	//	mainscreen.setLayout(new GridBagLayout());
-		//GridBagConstraints layout = new GridBagConstraints();
+	
 		
 		
 		
