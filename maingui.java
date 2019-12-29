@@ -6,6 +6,7 @@ import java.awt.Container;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 
 import javax.swing.*;
 
@@ -27,6 +28,8 @@ public class maingui {
 		JButton hardbutton = new JButton("Hard");
 		JButton extremebutton = new JButton("Extreme");
 		JTextField number = new JTextField(3);
+		JTextField name1 = new JTextField(5);
+		JTextField name2 = new JTextField(5);
 		JLabel title = new JLabel("Opening Contest");
 		JLabel numblabel = new JLabel("Number of Songs? ");
 
@@ -56,12 +59,14 @@ public class maingui {
 		number.setLocation(350, 230);
 
 		mainscreen.add(numblabel);
-<<<<<<< HEAD
 		numblabel.setSize(200,40);
 		numblabel.setLocation(350,200);
 		
+		name1.setSize(100,20);
+		name1.setLocation(100,230);
 		
-		
+		name2.setSize(100,20);
+		name2.setLocation(500,230);
 		
 		//easy button action
 				easybutton.addActionListener(new ActionListener() {
@@ -84,8 +89,7 @@ public class maingui {
 							}
 							
 						});
-	
-=======
+
 		numblabel.setSize(200, 40);
 		numblabel.setLocation(350, 200);
 
@@ -96,7 +100,14 @@ public class maingui {
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
 				int n = Integer.parseInt(number.getText());
-				game = new Game("Easy", n);
+				String p1 = name1.getText();
+				String p2 = name2.getText();
+				try {
+					game = new Game("Easy", n,p1,p2);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 		});
@@ -108,11 +119,18 @@ public class maingui {
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
 				int n = Integer.parseInt(number.getText());
-				game = new Game("Medium", n);
+				String p1 = name1.getText();
+				String p2 = name2.getText();
+				try {
+					game = new Game("Medium", n,p1,p2);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 		});
->>>>>>> 3e626042c0bb89cf5c72484d11528e7a1c09fb1f
+
 		
 		hardbutton.addActionListener(new ActionListener() {
 
@@ -120,7 +138,14 @@ public class maingui {
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
 				int n = Integer.parseInt(number.getText());
-				game = new Game("Hard", n);
+				String p1 = name1.getText();
+				String p2 = name2.getText();
+				try {
+					game = new Game("Hard", n,p1,p2);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 		});
@@ -131,7 +156,14 @@ public class maingui {
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
 				int n = Integer.parseInt(number.getText());
-				game = new Game("Extreme", n);
+				String p1 = name1.getText();
+				String p2 = name2.getText();
+				try {
+					game = new Game("Extreme", n,p1,p2);
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 
 		});

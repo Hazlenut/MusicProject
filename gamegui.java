@@ -12,13 +12,7 @@ import javax.swing.JPanel;
 import javax.swing.*;
 
 public class gamegui {
-	String name1;
-	String name2;
-	
-	public gamegui(String x, String y) {
-		this.name1 = x;
-		this.name2 = y;
-	}
+	private static Game game = maingui.game;
     public static void main(String args[]){
     	  JFrame frame = new JFrame("Music Contest");
           frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,8 +22,8 @@ public class gamegui {
           
           JButton add_button1 = new JButton("+1");
           JButton add_button2 = new JButton("+1");
-          JLabel name1 = new JLabel(this.name1);
-          
+          JLabel name1 = new JLabel(game.getName1());
+          JLabel name2 = new JLabel(game.getName2());
           JPanel mainscreen = new JPanel();
           
           
