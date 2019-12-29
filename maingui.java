@@ -9,54 +9,54 @@ import java.awt.event.ActionListener;
 
 import javax.swing.*;
 
-public class maingui{
-    public static void main(String args[]){
+public class maingui {
+	public static Game game;
+	public static void main(String args[]) {
 
-        JFrame frame = new JFrame("Music Contest");
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(800, 600);
-        frame.setVisible(true);
-		//create buttons
-        
-        JPanel mainscreen = new JPanel();
-        
-        
-       
-        mainscreen.setLayout(null);
-        JButton easybutton = new JButton("Easy");
-        JButton mediumbutton = new JButton("Medium");
-        JButton hardbutton = new JButton("Hard");
-        JButton extremebutton = new JButton("Extreme");
-        JTextField number = new JTextField(3);
-        JLabel title = new JLabel("Opening Contest"); 
-        JLabel numblabel = new JLabel("Number of Songs? ");
-        
-        title.setFont(new Font(title.getFont().getFontName(),Font.PLAIN,40));
+		JFrame frame = new JFrame("Music Contest");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.setSize(800, 600);
+		frame.setVisible(true);
+		// create buttons
+
+		JPanel mainscreen = new JPanel();
+
+		mainscreen.setLayout(null);
+		JButton easybutton = new JButton("Easy");
+		JButton mediumbutton = new JButton("Medium");
+		JButton hardbutton = new JButton("Hard");
+		JButton extremebutton = new JButton("Extreme");
+		JTextField number = new JTextField(3);
+		JLabel title = new JLabel("Opening Contest");
+		JLabel numblabel = new JLabel("Number of Songs? ");
+
+		title.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 40));
 		mainscreen.add(title);
-		title.setSize(400,60);
-		title.setLocation(250,50);
-        
+		title.setSize(400, 60);
+		title.setLocation(250, 50);
+
 		mainscreen.add(easybutton);
-		easybutton.setSize(100,40);
-		easybutton.setLocation(50,400);
-		
+		easybutton.setSize(100, 40);
+		easybutton.setLocation(50, 400);
+
 		mainscreen.add(mediumbutton);
-		mediumbutton.setSize(100,40);
-		mediumbutton.setLocation(250,400);
-		
+		mediumbutton.setSize(100, 40);
+		mediumbutton.setLocation(250, 400);
+
 		mainscreen.add(hardbutton);
-		hardbutton.setSize(100,40);
-		hardbutton.setLocation(450,400);
-		
+		hardbutton.setSize(100, 40);
+		hardbutton.setLocation(450, 400);
+
 		mainscreen.add(extremebutton);
-		extremebutton.setSize(100,40);
-		extremebutton.setLocation(650,400);
-		
+		extremebutton.setSize(100, 40);
+		extremebutton.setLocation(650, 400);
+
 		mainscreen.add(number);
-		number.setSize(100,20);
-		number.setLocation(350,230);
-		
+		number.setSize(100, 20);
+		number.setLocation(350, 230);
+
 		mainscreen.add(numblabel);
+<<<<<<< HEAD
 		numblabel.setSize(200,40);
 		numblabel.setLocation(350,200);
 		
@@ -85,10 +85,61 @@ public class maingui{
 							
 						});
 	
+=======
+		numblabel.setSize(200, 40);
+		numblabel.setLocation(350, 200);
+
+		// easy button action
+		easybutton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// do action when easy is pressed
+				int n = Integer.parseInt(number.getText());
+				game = new Game("Easy", n);
+			}
+
+		});
+
+		// medium button action
+		mediumbutton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// do action when easy is pressed
+				int n = Integer.parseInt(number.getText());
+				game = new Game("Medium", n);
+			}
+
+		});
+>>>>>>> 3e626042c0bb89cf5c72484d11528e7a1c09fb1f
 		
+		hardbutton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// do action when easy is pressed
+				int n = Integer.parseInt(number.getText());
+				game = new Game("Hard", n);
+			}
+
+		});
 		
+		extremebutton.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// do action when easy is pressed
+				int n = Integer.parseInt(number.getText());
+				game = new Game("Extreme", n);
+			}
+
+		});
 		
+		// mainscreen.setLayout(new GridBagLayout());
+		// GridBagConstraints layout = new GridBagConstraints();
+
 		frame.getContentPane().add(mainscreen);
 
-    }
+	}
 }
