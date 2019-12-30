@@ -106,12 +106,14 @@ public class gamegui {
 		jfxPanel.setSize(400,250);
 		jfxPanel.setLocation(200,120);
 		
-
+		
 		
 		next.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
+				//Platform.exit();
+				//jfxPanel.setScene(null);
 				// TODO Auto-generated method stub
 				
 				title_answer.setText("Anime Name: " + game.getList().get(turn).getTitle());
@@ -122,6 +124,7 @@ public class gamegui {
 					final WebView webView = new WebView();
 					final Scene video = new Scene(webView);
 				    jfxPanel.setScene(video);
+				    
 
 				    webView.getEngine().load(game.getList().get(turn-1).getUrl() + "?autoplay=1");
 				});
