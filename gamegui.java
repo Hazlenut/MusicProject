@@ -23,6 +23,7 @@ public class gamegui {
 	static int turn = 0;
 
 	private static Game game = maingui.game;
+
 	public static void startGame() {
 		JFrame frame = new JFrame("Music Contest");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,7 +50,7 @@ public class gamegui {
 
 		mainscreen.add(next);
 		next.setSize(100, 40);
-		next.setLocation(350, 500);
+	    next.setLocation(350, 500);
 
 		mainscreen.add(finish);
 		finish.setSize(100, 40);
@@ -70,58 +71,74 @@ public class gamegui {
 
 		mainscreen.add(add_button1);
 		add_button1.setSize(100, 40);
-		add_button1.setLocation(80, 150);
+		add_button1.setLocation(50, 150);
 
 		mainscreen.add(add_button2);
 		add_button2.setSize(100, 40);
-		add_button2.setLocation(600, 150);
+		add_button2.setLocation(650, 150);
 
 		mainscreen.add(add_button3);
 		add_button3.setSize(100, 40);
-		add_button3.setLocation(80, 200);
+		add_button3.setLocation(50, 200);
 
 		mainscreen.add(add_button4);
 		add_button4.setSize(100, 40);
-		add_button4.setLocation(600, 200);
+		add_button4.setLocation(650, 200);
 
 		mainscreen.add(name1);
 		name1.setSize(100, 40);
-		name1.setLocation(100, 50);
+		name1.setLocation(70, 50);
 
 		mainscreen.add(name2);
 		name2.setSize(100, 40);
-		name2.setLocation(630, 50);
+		name2.setLocation(680, 50);
 
 		mainscreen.add(scoreboard);
 		scoreboard.setFont(new Font(scoreboard.getFont().getFontName(), Font.PLAIN, 60));
 		scoreboard.setSize(400, 100);
 		scoreboard.setLocation(310, 20);
 
-		SimpleSwingBrowser view = new SimpleSwingBrowser();
-		view.setVisible(false);
+	///	SimpleSwingBrowser view = new SimpleSwingBrowser();
+	///	view.setVisible(false);
+		
+		JFXPanel jfxPanel = new JFXPanel();
+		frame.add(jfxPanel);
+		jfxPanel.setSize(400,250);
+		jfxPanel.setLocation(200,120);
+		
+
 		
 		next.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-
 				// TODO Auto-generated method stub
+				
 				title_answer.setText("Anime Name: " + game.getList().get(turn).getTitle());
 				song_answer.setText("Song Name: " + game.getList().get(turn).getName());
 				author_answer.setText("Author: " + game.getList().get(turn).getAuthor());
-				view.setVisible(true);
-				view.loadURL(game.getList().get(turn).getUrl().replace("/watch?v=", "/embed/") + "?autoplay=1");
-				//view.loadURL("https://www.youtuberepeat.com/embed/n2rVnRwW0h8?autoplay=1");
+		
+				Platform.runLater(() -> {
+					final WebView webView = new WebView();
+					final Scene video = new Scene(webView);
+				    jfxPanel.setScene(video);
+
+				    webView.getEngine().load(game.getList().get(turn-1).getUrl() + "?autoplay=1");
+				});
+				
+				///view.setVisible(true);
+				///view.loadURL(game.getList().get(turn).getUrl().replace("/watch?v=", "/embed/") + "?autoplay=1");
 				turn++;
 				if (turn == game.getN()) {
 					next.setVisible(false);
 					finish.setVisible(true);
 				}
-				
-				
 			}
-
+			
 		});
+		
+		
+		
 
 		finish.addActionListener(new ActionListener() {
 
