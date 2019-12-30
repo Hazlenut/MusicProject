@@ -29,6 +29,7 @@ public class maingui {
 		JTextField number = new JTextField(3);
 		JLabel title = new JLabel("Opening Contest");
 		JLabel numblabel = new JLabel("Number of Songs? ");
+		
 
 		title.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 40));
 		mainscreen.add(title);
@@ -56,36 +57,7 @@ public class maingui {
 		number.setLocation(350, 230);
 
 		mainscreen.add(numblabel);
-<<<<<<< HEAD
-		numblabel.setSize(200,40);
-		numblabel.setLocation(350,200);
-		
-		
-		
-		
-		//easy button action
-				easybutton.addActionListener(new ActionListener() {
 
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						// do action when easy is pressed
-						
-					}
-					
-				});
-				
-				//medium button action
-						mediumbutton.addActionListener(new ActionListener() {
-
-							@Override
-							public void actionPerformed(ActionEvent arg0) {
-								// do action when easy is pressed
-								
-							}
-							
-						});
-	
-=======
 		numblabel.setSize(200, 40);
 		numblabel.setLocation(350, 200);
 
@@ -112,7 +84,7 @@ public class maingui {
 			}
 
 		});
->>>>>>> 3e626042c0bb89cf5c72484d11528e7a1c09fb1f
+//>>>>>>> 3e626042c0bb89cf5c72484d11528e7a1c09fb1f
 		
 		hardbutton.addActionListener(new ActionListener() {
 
