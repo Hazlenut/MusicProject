@@ -60,8 +60,7 @@ public class maingui {
 		number.setLocation(350, 230);
 
 		mainscreen.add(numblabel);
-<<<<<<< HEAD
-=======
+
 		numblabel.setSize(200,40);
 		numblabel.setLocation(350,200);
 		
@@ -72,30 +71,7 @@ public class maingui {
 		mainscreen.add(name2);
 		name2.setSize(100,20);
 		name2.setLocation(500,230);
-		
-		//easy button action
-				easybutton.addActionListener(new ActionListener() {
-
-					@Override
-					public void actionPerformed(ActionEvent arg0) {
-						// do action when easy is pressed
-						
-					}
-					
-				});
-				
-				//medium button action
-						mediumbutton.addActionListener(new ActionListener() {
-
-							@Override
-							public void actionPerformed(ActionEvent arg0) {
-								// do action when easy is pressed
-								
-							}
-							
-						});
->>>>>>> 7419e6dda49fe9a3622b6fe7c02f3a4813e15810
-
+	
 		numblabel.setSize(200, 40);
 		numblabel.setLocation(350, 200);
 
@@ -136,12 +112,7 @@ public class maingui {
 			}
 
 		});
-<<<<<<< HEAD
-//>>>>>>> 3e626042c0bb89cf5c72484d11528e7a1c09fb1f
-=======
 
->>>>>>> 7419e6dda49fe9a3622b6fe7c02f3a4813e15810
-		
 		hardbutton.addActionListener(new ActionListener() {
 
 			@Override
