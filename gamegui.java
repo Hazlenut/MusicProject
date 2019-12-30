@@ -48,4 +48,8 @@ public class gamegui {
     	
     	
     }
+    public static String nextUrl(int n) {
+    	String url = game.getList().get(n).getUrl();
+    	return url;
+    }
 }

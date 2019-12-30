@@ -110,6 +110,8 @@ public class maingui {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				frame.dispose();
+				gamegui.startGame();
 			}
 
 		});
@@ -129,6 +131,8 @@ public class maingui {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				frame.dispose();
+				gamegui.startGame();
 			}
 
 		});
@@ -168,6 +172,8 @@ public class maingui {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				frame.dispose();
+				gamegui.startGame();
 			}
 
 		});
