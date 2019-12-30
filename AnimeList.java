@@ -31,6 +31,8 @@ public class AnimeList {
 			}else{
 				a.setDifficult(false);
 			}
+			a.setName(data.formatCellValue(c.getCell(3)));
+			a.setAuthor(data.formatCellValue(c.getCell(4)));
 			res.add(a);
 			
 		}
@@ -117,6 +119,7 @@ public class AnimeList {
 			}else {
 				System.out.print("Easy");
 			}
+			System.out.print("\n" + "Author: " + a.getAuthor() + "\n" + "Name: " + a.getName());
 			System.out.println();
 		}
 	}

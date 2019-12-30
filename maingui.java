@@ -116,6 +116,7 @@ public class maingui {
 				}
 				frame.dispose();
 				gamegui.startGame();
+					
 				}
 					catch(NumberFormatException e)
 					{
