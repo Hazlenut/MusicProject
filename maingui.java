@@ -32,6 +32,7 @@ public class maingui {
 		JTextField name2 = new JTextField(5);
 		JLabel title = new JLabel("Opening Contest");
 		JLabel numblabel = new JLabel("Number of Songs? ");
+		
 
 		title.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 40));
 		mainscreen.add(title);
@@ -59,6 +60,8 @@ public class maingui {
 		number.setLocation(350, 230);
 
 		mainscreen.add(numblabel);
+<<<<<<< HEAD
+=======
 		numblabel.setSize(200,40);
 		numblabel.setLocation(350,200);
 		
@@ -91,6 +94,7 @@ public class maingui {
 							}
 							
 						});
+>>>>>>> 7419e6dda49fe9a3622b6fe7c02f3a4813e15810
 
 		numblabel.setSize(200, 40);
 		numblabel.setLocation(350, 200);
@@ -136,7 +140,11 @@ public class maingui {
 			}
 
 		});
+<<<<<<< HEAD
+//>>>>>>> 3e626042c0bb89cf5c72484d11528e7a1c09fb1f
+=======
 
+>>>>>>> 7419e6dda49fe9a3622b6fe7c02f3a4813e15810
 		
 		hardbutton.addActionListener(new ActionListener() {
 
