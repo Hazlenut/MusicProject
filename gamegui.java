@@ -1,6 +1,7 @@
 package music;
 
 import java.awt.*;
+
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.concurrent.atomic.AtomicReference;
@@ -8,13 +9,6 @@ import java.util.concurrent.atomic.AtomicReference;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-
-import org.eclipse.swt.SWT;
-import org.eclipse.swt.awt.SWT_AWT;
-import org.eclipse.swt.browser.Browser;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 
 import javafx.application.Platform;
 import javafx.embed.swing.JFXPanel;
@@ -29,8 +23,6 @@ public class gamegui {
 	static int turn = 0;
 
 	private static Game game = maingui.game;
-	private final static AtomicReference<Browser> browserReference = new AtomicReference<>();
-
 	public static void startGame() {
 		JFrame frame = new JFrame("Music Contest");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
