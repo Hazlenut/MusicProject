@@ -29,7 +29,9 @@ public class maingui {
 		JButton extremebutton = new JButton("Extreme");
 		JTextField number = new JTextField(3);
 		JTextField name1 = new JTextField(5);
+		JLabel name1label = new JLabel("Player 1");
 		JTextField name2 = new JTextField(5);
+		JLabel name2label = new JLabel("Player 2");
 		JLabel title = new JLabel("Opening Contest");
 		JLabel numblabel = new JLabel("Number of Songs? ");
 		
@@ -37,7 +39,7 @@ public class maingui {
 		title.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 40));
 		mainscreen.add(title);
 		title.setSize(400, 60);
-		title.setLocation(250, 50);
+		title.setLocation(230, 50);
 
 		mainscreen.add(easybutton);
 		easybutton.setSize(100, 40);
@@ -68,9 +70,17 @@ public class maingui {
 		name1.setSize(100,20);
 		name1.setLocation(100,230);
 		
+		mainscreen.add(name1label);
+		name1label.setSize(100,40);
+		name1label.setLocation(125,200);
+		
 		mainscreen.add(name2);
 		name2.setSize(100,20);
-		name2.setLocation(500,230);
+		name2.setLocation(600,230);
+		
+		mainscreen.add(name2label);
+		name2label.setSize(100,40);
+		name2label.setLocation(625,200);
 	
 		numblabel.setSize(200, 40);
 		numblabel.setLocation(350, 200);
@@ -81,6 +91,20 @@ public class maingui {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
+				if(name1.getText().contentEquals("") || name2.getText().contentEquals("") || number.getText().contentEquals("")) {
+					JLabel error = new JLabel("Fill in the empty boxes");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
+
+					error.setLocation(260,475);
+
+					
+				}
+				else {
+					
+					try {
 				int n = Integer.parseInt(number.getText());
 				String p1 = name1.getText();
 				String p2 = name2.getText();
@@ -92,6 +116,19 @@ public class maingui {
 				}
 				frame.dispose();
 				gamegui.startGame();
+				}
+					catch(NumberFormatException e)
+					{
+						JLabel error = new JLabel("Number must be an integer");
+						error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+						mainscreen.add(error);
+						error.setSize(400,50);
+						error.setForeground(Color.RED);
+
+						error.setLocation(240,475);
+					}
+				}
+				
 			}
 
 		});
@@ -101,8 +138,26 @@ public class maingui {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
+				
+				if(name1.getText().contentEquals("") || name2.getText().contentEquals("") || number.getText().contentEquals("")) {
+					JLabel error = new JLabel("Fill in the empty boxes");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
+
+					error.setLocation(260,475);
+
+					
+				}
+				else {
+					
+				try {
 				// do action when easy is pressed
 				int n = Integer.parseInt(number.getText());
+				
+				
+				
 				String p1 = name1.getText();
 				String p2 = name2.getText();
 				try {
@@ -113,6 +168,23 @@ public class maingui {
 				}
 				frame.dispose();
 				gamegui.startGame();
+			
+				}
+				catch(NumberFormatException e)
+				{
+					JLabel error = new JLabel("Number must be an integer");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
+
+					error.setLocation(240,475);
+				}
+				
+				
+				
+					
+				}
 			}
 
 		});
@@ -122,6 +194,21 @@ public class maingui {
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
+				if(name1.getText().contentEquals("") || name2.getText().contentEquals("") || number.getText().contentEquals("")) {
+					JLabel error = new JLabel("Fill in the empty boxes");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
+
+					error.setLocation(260,475);
+
+					
+				}
+				else {
+					try {
+						
+					
 				int n = Integer.parseInt(number.getText());
 				String p1 = name1.getText();
 				String p2 = name2.getText();
@@ -134,14 +221,38 @@ public class maingui {
 				frame.dispose();
 				gamegui.startGame();
 			}
+				
+				catch(NumberFormatException e)
+				{
+					JLabel error = new JLabel("Number must be an integer");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
 
-		});
+					error.setLocation(240,475);
+				}
+			}
+			}});
 		
 		extremebutton.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent arg0) {
 				// do action when easy is pressed
+				if(name1.getText().contentEquals("") || name2.getText().contentEquals("") || number.getText().contentEquals("")) {
+					JLabel error = new JLabel("Fill in the empty boxes");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
+
+					error.setLocation(260,475);
+
+					
+				}
+				else {
+					try {
 				int n = Integer.parseInt(number.getText());
 				String p1 = name1.getText();
 				String p2 = name2.getText();
@@ -154,8 +265,20 @@ public class maingui {
 				frame.dispose();
 				gamegui.startGame();
 			}
+				
+				catch(NumberFormatException e)
+				{
+					JLabel error = new JLabel("Number must be an integer");
+					error.setFont(new Font(title.getFont().getFontName(), Font.PLAIN, 25));
+					mainscreen.add(error);
+					error.setSize(400,50);
+					error.setForeground(Color.RED);
 
-		});
+					error.setLocation(240,475);
+				}
+			}
+
+		}});
 		
 		// mainscreen.setLayout(new GridBagLayout());
 		// GridBagConstraints layout = new GridBagConstraints();
